@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>制霸中国城市版</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+      <h1>制霸中国城市版 分数：<span id="level">0</span></h1>
+      <table id="legend">
+        <tr class="select" data-level="5"><td>等级: 5</td><td class="select">居住</td></tr>
+        <tr class="select" data-level="4"><td>等级: 4</td><td class="select">短居</td></tr>
+        <tr class="select" data-level="3"><td>等级: 3</td><td class="select">游玩</td></tr>
+        <tr class="select" data-level="2"><td>等级: 2</td><td class="select">出差</td></tr>
+        <tr class="select" data-level="1"><td>等级: 1</td><td class="select">路过</td></tr>
+        <tr class="select" data-level="0"><td>等级: 0</td><td class="select">没去过</td></tr>
+      </table>
+      <table id="table">
+        <tr>
+          <th></th>
+        </tr>
+        <tr><td class="select" data-level="5">居住</td></tr>
+        <tr><td class="select" data-level="4">短居</td></tr>
+        <tr><td class="select" data-level="3">游玩</td></tr>
+        <tr><td class="select" data-level="2">出差</td></tr>
+        <tr><td class="select" data-level="1">路过</td></tr>
+        <tr><td class="select" data-level="0">没去过</td></tr>
+      </table>
+    <div id="map"></div>
+    
+    <script src="lib/ChinaMapData.js"></script>
+    <script src="lib/html2canvas.min.js"></script>
+    <script src="lib/raphael-min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
