@@ -66,8 +66,8 @@ window.onload = function () {
         [graph].forEach(
             function (e) {
                 e.attr({cursor : 'pointer'});
-                e[0].onclick = popTable;
-                e[0].city = city;
+                e.node.onclick = popTable;
+                e.node.city = city;
                 // e.node.onmouseover = showName;
                 // e.node.onmouseout = hideName;
             }
