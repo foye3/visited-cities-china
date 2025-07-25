@@ -13,11 +13,13 @@ function popTable(e) {
 }
 
 function showName(e) {
-    e.node.attr({opacity: 1});
+    // reveal the city name when the mouse hovers over the city
+    e.currentTarget.city.text.attr({opacity: 1});
 }
 
 function hideName(e) {
-    e.node.attr({opacity: 0});
+    // hide the city name when the mouse leaves the city
+    e.currentTarget.city.text.attr({opacity: 0});
 }
 
 function handleSelect(e) {
@@ -61,15 +63,21 @@ window.onload = function () {
         city.level = 0;
         var x = graph.getBBox().x + graph.getBBox().width / 2 + city.offset.x;
         var y = graph.getBBox().y + graph.getBBox().height / 2 + city.offset.y;
-        // var text = map.text(x, y, key);
+        var text = map.text(x, y, city.name);
+        text.attr({
+            opacity: 0,
+            'font-size': 10,
+            'pointer-events': 'none'
+        });
+        city.text = text;
 
         [graph].forEach(
             function (e) {
                 e.attr({cursor : 'pointer'});
                 e.node.onclick = popTable;
                 e.node.city = city;
-                // e.node.onmouseover = showName;
-                // e.node.onmouseout = hideName;
+                e.node.onmouseover = showName;
+                e.node.onmouseout = hideName;
             }
         );
     }
